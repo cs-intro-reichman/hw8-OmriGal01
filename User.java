@@ -103,7 +103,7 @@
         int max = Math.max(this.fCount, other.fCount);
         String mutuals = "";
         for (int i = 0; i < max && this.follows[i] != null; i++) {
-            if (other.follows(this.follows[i]) && !this.follows[i].contains(mutuals)) {
+            if (other.follows(this.follows[i]) && !mutuals.contains(this.follows[i])) {
                 System.out.println(other.name + " follows " + this.follows[i]);
                 mutuals += this.follows[i].toLowerCase() + " ";
                 count++;
