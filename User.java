@@ -101,9 +101,16 @@
     public int countMutual(User other) {
         int count = 0;
         int max = Math.max(this.fCount, other.fCount);
+        String[] mutuals = new String[maxfCount];
         for (int i = 0; i < max && this.follows[i] != null; i++) {
-            if (other.follows(this.follows[i])) {
+            boolean alreadyChecked = false;
+            for (int j = 0; j < mutuals.length && !alreadyChecked; j++) {
+                if (this.follows[i].equals(mutuals[j]));
+                alreadyChecked = true;
+            }
+            if (other.follows(this.follows[i]) && !alreadyChecked) {
                 System.out.println(other.name + " follows " + this.follows[i]);
+                mutuals[count] = this.follows[i].toLowerCase();
                 count++;
             }
         }
