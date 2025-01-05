@@ -120,4 +120,8 @@ public class Network {
         }
        return p;
     }
+
+    public int getUserCount() {
+        return this.userCount;
+    }
 }
