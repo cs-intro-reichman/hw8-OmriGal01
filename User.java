@@ -58,6 +58,10 @@
             System.out.println(this.name + "'s follows list is full");
             return false;
         }
+        if (this.name.equals(name)) {
+            System.out.println("User cannot follow himself");
+            return false;
+        }
         for (int i = 0; i < this.fCount; i++) {
             if (this.follows[i].toLowerCase().equals(name.toLowerCase())) {
                 System.out.println(this.name + " already follows " + name);
