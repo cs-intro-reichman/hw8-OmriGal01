@@ -101,7 +101,7 @@
     public int countMutual(User other) {
         int count = 0;
         int max = Math.max(this.fCount, other.fCount);
-        for (int i = 0; i < max; i++) {
+        for (int i = 0; i < max && this.follows[i] != null; i++) {
             if (other.follows(this.follows[i])) {
                 System.out.println(other.name + " follows " + this.follows[i]);
                 count++;
