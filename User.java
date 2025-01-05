@@ -59,7 +59,7 @@
             return false;
         }
         for (int i = 0; i < this.fCount; i++) {
-            if (this.follows[i].equals(name)) {
+            if (this.follows[i].toLowerCase().equals(name)) {
                 System.out.println(this.name + " already follows " + name);
                 return false;
             }
